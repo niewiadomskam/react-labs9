@@ -1,4 +1,4 @@
-import { EMPLOYEES_LOADED } from './constants';
+import { EMPLOYEES_LOADED, LAUNCH_FETCH } from './constants';
 
 export const initialState = {
   employees: [],
@@ -12,6 +12,9 @@ const appReducer = (state = initialState, action) => {
       const { employees } = action.payload;
       // CAREFUL: You can't modify state variable directly.
       return Object.assign({}, state, { employees });
+    }
+    case LAUNCH_FETCH : {
+      {...state, loading: action.payload};
     }
     default:
         return state

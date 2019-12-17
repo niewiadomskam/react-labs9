@@ -69,6 +69,7 @@ class PageEmployeeCreate extends React.Component {
         this.props.history.push("/");
       }
     })  
+    //.then(res=>this.props.employeesReturnToList())
   }
 
   render() {
